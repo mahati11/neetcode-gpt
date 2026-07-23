@@ -17,8 +17,10 @@ class Solution:
                 res += np.log(y_pred[i] + (1e-7))
             else:
                 res += np.log((1-y_pred[i]) + (1e-7))
+        
+        ans = -res/n
 
-        return np.round((-res/n),4)
+        return np.round(ans,4)
 
 
 
@@ -34,5 +36,6 @@ class Solution:
             for j in range(m):
                 if y_true[i][j] == 1:
                     res+= np.log(y_pred[i][j] + 1e-7)
-        return np.round((-res/n),4)
+        ans = -res/n
+        return np.round(ans,4)
 
